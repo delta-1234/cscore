@@ -1,4 +1,4 @@
-#简单计数器
+# 简单计数器
 |端口|位宽|方向|描述|
 |----|----|----|----|
 |Clk|1|I|时钟信号|
@@ -15,17 +15,17 @@
 3. 在满足1时，即使2的条件满足，也不必执行2；
 4. 注意：复位操作也会复位每个计数器当前的有效时钟周期；初始时每个计数器的值都为 0。
 ******
-##思路1
+## 思路1
 使用一个integer变量cnt来储存计数器1的有效时钟信号，当cnt%4==0时将计数器1累加1,我根据此思路写出了counter.v，并成功通过了仿真测试。
 
-####仿真成功但综合时出现Warning
+#### 仿真成功但综合时出现Warning
 
 WARNING:Xst:1710 - FF/Latch <cnt_31> (without init value) has a constant value of 0 in block \<code>. This FF/Latch will be trimmed during the optimization process.  
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch \<cnt_30> (without init value) has a constant value of 0 in block \<code>. This FF/Latch will be trimmed during the optimization process.
 
 上网查询后，发现这是因为带有integer变量的代码是不可综合的，需要将其转化为reg型变量。
 
-####综合结果
+#### 综合结果
 ![图 1](images/0515b40becd72f1af2bb0522e76793d4d69b4f858f5f155f48e6019a86d8a959.png)  
 ****
 ##思路2
@@ -43,8 +43,8 @@ WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch \<cnt_30> (without i
           else
           Output1 <= Output1;
         end
-```
-###综合时同样出现Warning
+``` 
+### 综合时同样出现Warning
 
 WARNING:Xst:2677 - Node \<cnt_33> of sequential type is unconnected in block \<code>.
 
@@ -55,7 +55,7 @@ WARNING:Xst:2677 - Node \<cnt_34> of sequential type is unconnected in block \<c
 ![图 2](images/bb8ebf599389208798b429743f1456e72e73b5d027be960c9a83a48b9bea579d.png)  
 询问助教后得知，因为cnt只有后两位有用，其他位未连接，所以出现报错
 
-###再次更改
+### 再次更改
 
 将cnt定义为位宽为2位的寄存器，问题解决
 
