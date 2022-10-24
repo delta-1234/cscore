@@ -1,0 +1,125 @@
+$date
+	Mon Oct 10 11:15:29 2022
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module tb_VoterPlus $end
+$var wire 8 ! result [7:0] $end
+$var reg 1 " clk $end
+$var reg 32 # np [31:0] $end
+$var reg 1 $ reset $end
+$var reg 8 % vip [7:0] $end
+$var reg 1 & vvip $end
+$scope module u_VoterPlus $end
+$var wire 1 " clk $end
+$var wire 32 ' np [31:0] $end
+$var wire 1 $ reset $end
+$var wire 8 ( vip [7:0] $end
+$var wire 1 & vvip $end
+$var reg 32 ) np_state [31:0] $end
+$var reg 8 * result [7:0] $end
+$var reg 8 + vip_state [7:0] $end
+$var reg 1 , vvip_state $end
+$var integer 32 - count [31:0] $end
+$var integer 32 . i [31:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+bx .
+b0 -
+0,
+b0 +
+b0 *
+b0 )
+b0 (
+b0 '
+0&
+b0 %
+1$
+b0 #
+0"
+b0 !
+$end
+#2000
+b11010101 %
+b11010101 (
+b11111111111111111111111111110000 #
+b11111111111111111111111111110000 '
+0$
+#5000
+b110000 !
+b110000 *
+b11010101 +
+b110000 -
+b11111111111111111111111111110000 )
+b1000 .
+1"
+#10000
+1&
+b101010 %
+b101010 (
+b1111 #
+b1111 '
+0"
+#15000
+b1010000 !
+b1010000 *
+1,
+b11111111 +
+b1010000 -
+b11111111111111111111111111111111 )
+b1000 .
+1"
+#20000
+0"
+#25000
+b1000 .
+1"
+#30000
+0"
+#35000
+b1000 .
+1"
+#40000
+0"
+#45000
+b1000 .
+1"
+#50000
+0"
+#55000
+b1000 .
+1"
+#60000
+0"
+#65000
+b1000 .
+1"
+#70000
+0"
+#75000
+b1000 .
+1"
+#80000
+0"
+#85000
+b1000 .
+1"
+#90000
+0"
+#95000
+b1000 .
+1"
+#100000
+0"
+#105000
+b1000 .
+1"
+#110000
+0"

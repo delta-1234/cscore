@@ -1,0 +1,95 @@
+#! c:/iverilog-x86/bin/vvp
+:ivl_version "10.0 (stable)" "(v10_0)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "vhdl_sys";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_01303888 .scope module, "alu" "alu" 2 1;
+ .timescale 0 0;
+    .port_info 0 /INPUT 32 "A"
+    .port_info 1 /INPUT 32 "B"
+    .port_info 2 /INPUT 3 "ALUOp"
+    .port_info 3 /OUTPUT 32 "C"
+o02c93fd4 .functor BUFZ 32, C4<zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz>; HiZ drive
+o02c94004 .functor BUFZ 32, C4<zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz>; HiZ drive
+L_01303958 .functor AND 32, o02c93fd4, o02c94004, C4<11111111111111111111111111111111>, C4<11111111111111111111111111111111>;
+L_013039a0 .functor OR 32, o02c93fd4, o02c94004, C4<00000000000000000000000000000000>, C4<00000000000000000000000000000000>;
+v0130be18_0 .net "A", 31 0, o02c93fd4;  0 drivers
+o02c93fec .functor BUFZ 3, C4<zzz>; HiZ drive
+v0130bb58_0 .net "ALUOp", 2 0, o02c93fec;  0 drivers
+v0130be70_0 .net "B", 31 0, o02c94004;  0 drivers
+v0130bec8_0 .net "C", 31 0, L_02cefad0;  1 drivers
+L_02cb6d28 .functor BUFT 1, C4<000>, C4<0>, C4<0>, C4<0>;
+v0130bf20_0 .net/2u *"_s0", 2 0, L_02cb6d28;  1 drivers
+v02cb4c90_0 .net *"_s10", 31 0, L_02cb5840;  1 drivers
+L_02cb6d78 .functor BUFT 1, C4<010>, C4<0>, C4<0>, C4<0>;
+v02cb4d40_0 .net/2u *"_s12", 2 0, L_02cb6d78;  1 drivers
+v02cb5630_0 .net *"_s14", 0 0, L_02cb58f0;  1 drivers
+v02cb5058_0 .net *"_s16", 31 0, L_01303958;  1 drivers
+L_02cb6da0 .functor BUFT 1, C4<011>, C4<0>, C4<0>, C4<0>;
+v02cb4df0_0 .net/2u *"_s18", 2 0, L_02cb6da0;  1 drivers
+v02cb53c8_0 .net *"_s2", 0 0, L_02cb5b00;  1 drivers
+v02cb4ce8_0 .net *"_s20", 0 0, L_02cb5bb0;  1 drivers
+v02cb50b0_0 .net *"_s22", 31 0, L_013039a0;  1 drivers
+L_02cb6dc8 .functor BUFT 1, C4<100>, C4<0>, C4<0>, C4<0>;
+v02cb5108_0 .net/2u *"_s24", 2 0, L_02cb6dc8;  1 drivers
+v02cb4d98_0 .net *"_s26", 0 0, L_02cb5948;  1 drivers
+v02cb4e48_0 .net *"_s28", 31 0, L_02cb59f8;  1 drivers
+L_02cb6df0 .functor BUFT 1, C4<101>, C4<0>, C4<0>, C4<0>;
+v02cb5210_0 .net/2u *"_s30", 2 0, L_02cb6df0;  1 drivers
+v02cb5580_0 .net *"_s32", 0 0, L_02cb5898;  1 drivers
+v02cb5268_0 .net *"_s34", 31 0, L_02cb59a0;  1 drivers
+L_02cb6e18 .functor BUFT 1, C4<110>, C4<0>, C4<0>, C4<0>;
+v02cb4f50_0 .net/2u *"_s36", 2 0, L_02cb6e18;  1 drivers
+v02cb5160_0 .net *"_s38", 0 0, L_02cb5b58;  1 drivers
+v02cb4ea0_0 .net *"_s4", 31 0, L_02cb5aa8;  1 drivers
+v02cb4ef8_0 .net *"_s40", 0 0, L_02cb5738;  1 drivers
+L_02cb6e40 .functor BUFT 1, C4<00000000000000000000000000000001>, C4<0>, C4<0>, C4<0>;
+v02cb54d0_0 .net/2u *"_s42", 31 0, L_02cb6e40;  1 drivers
+L_02cb6e68 .functor BUFT 1, C4<00000000000000000000000000000000>, C4<0>, C4<0>, C4<0>;
+v02cb5688_0 .net/2u *"_s44", 31 0, L_02cb6e68;  1 drivers
+v02cb51b8_0 .net *"_s46", 31 0, L_02cb5a50;  1 drivers
+v02cb56e0_0 .net *"_s48", 0 0, L_02cefc30;  1 drivers
+L_02cb6e90 .functor BUFT 1, C4<00000000000000000000000000000001>, C4<0>, C4<0>, C4<0>;
+v02cb5528_0 .net/2u *"_s50", 31 0, L_02cb6e90;  1 drivers
+L_02cb6eb8 .functor BUFT 1, C4<00000000000000000000000000000000>, C4<0>, C4<0>, C4<0>;
+v02cb5318_0 .net/2u *"_s52", 31 0, L_02cb6eb8;  1 drivers
+v02cb52c0_0 .net *"_s54", 31 0, L_02cef970;  1 drivers
+v02cb4fa8_0 .net *"_s56", 31 0, L_02cefa20;  1 drivers
+v02cb5000_0 .net *"_s58", 31 0, L_02cef8c0;  1 drivers
+L_02cb6d50 .functor BUFT 1, C4<001>, C4<0>, C4<0>, C4<0>;
+v02cb4c38_0 .net/2u *"_s6", 2 0, L_02cb6d50;  1 drivers
+v02cb5370_0 .net *"_s60", 31 0, L_02cefc88;  1 drivers
+v02cb5420_0 .net *"_s62", 31 0, L_02cef9c8;  1 drivers
+v02cb5478_0 .net *"_s64", 31 0, L_02cefa78;  1 drivers
+v02cb55d8_0 .net *"_s66", 31 0, L_02cef918;  1 drivers
+v02cb5790_0 .net *"_s8", 0 0, L_02cb57e8;  1 drivers
+L_02cb5b00 .cmp/eq 3, o02c93fec, L_02cb6d28;
+L_02cb5aa8 .arith/sum 32, o02c93fd4, o02c94004;
+L_02cb57e8 .cmp/eq 3, o02c93fec, L_02cb6d50;
+L_02cb5840 .arith/sub 32, o02c93fd4, o02c94004;
+L_02cb58f0 .cmp/eq 3, o02c93fec, L_02cb6d78;
+L_02cb5bb0 .cmp/eq 3, o02c93fec, L_02cb6da0;
+L_02cb5948 .cmp/eq 3, o02c93fec, L_02cb6dc8;
+L_02cb59f8 .shift/r 32, o02c93fd4, o02c94004;
+L_02cb5898 .cmp/eq 3, o02c93fec, L_02cb6df0;
+L_02cb59a0 .shift/rs 32, o02c93fd4, o02c94004;
+L_02cb5b58 .cmp/eq 3, o02c93fec, L_02cb6e18;
+L_02cb5738 .cmp/gt 32, o02c93fd4, o02c94004;
+L_02cb5a50 .functor MUXZ 32, L_02cb6e68, L_02cb6e40, L_02cb5738, C4<>;
+L_02cefc30 .cmp/gt.s 32, o02c93fd4, o02c94004;
+L_02cef970 .functor MUXZ 32, L_02cb6eb8, L_02cb6e90, L_02cefc30, C4<>;
+L_02cefa20 .functor MUXZ 32, L_02cef970, L_02cb5a50, L_02cb5b58, C4<>;
+L_02cef8c0 .functor MUXZ 32, L_02cefa20, L_02cb59a0, L_02cb5898, C4<>;
+L_02cefc88 .functor MUXZ 32, L_02cef8c0, L_02cb59f8, L_02cb5948, C4<>;
+L_02cef9c8 .functor MUXZ 32, L_02cefc88, L_013039a0, L_02cb5bb0, C4<>;
+L_02cefa78 .functor MUXZ 32, L_02cef9c8, L_01303958, L_02cb58f0, C4<>;
+L_02cef918 .functor MUXZ 32, L_02cefa78, L_02cb5840, L_02cb57e8, C4<>;
+L_02cefad0 .functor MUXZ 32, L_02cef918, L_02cb5aa8, L_02cb5b00, C4<>;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "ALU32bits.v";
