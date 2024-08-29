@@ -1,0 +1,175 @@
+.data
+arry:.space 4096
+
+.text
+#ºƒ¥Ê∆˜π¶ƒ‹≤‚ ‘
+addi $t0,$0,0#i=0
+addi $0,$0,15602
+sll $t2,$t0,2
+sw $0,arry($t2)
+addi $t0,$t0,1
+addi $1,$0,8948
+sll $t2,$t0,2
+addi $t2,$t2,1
+sw $1,-1($t2)
+addi $t2,$t2,-1
+addi $t0,$t0,1
+addi $2,$0,9242
+sll $t2,$t0,2
+sw $2,arry($t2)
+addi $t0,$t0,1
+addi $3,$0,17432
+sll $t2,$t0,2
+sw $3,arry($t2)
+addi $t0,$t0,1
+addi $4,$0,764
+sll $t2,$t0,2
+sw $4,arry($t2)
+addi $t0,$t0,1
+addi $5,$0,3621
+sll $t2,$t0,2
+sw $5,arry($t2)
+addi $t0,$t0,1
+addi $6,$0,-6179
+sll $t2,$t0,2
+sw $6,arry($t2)
+addi $t0,$t0,1
+addi $7,$0,12560
+sll $t2,$t0,2
+sw $7,arry($t2)
+addi $t0,$t0,1
+addi $9,$0,-2518
+sll $t2,$t0,2
+sw $9,arry($t2)
+addi $t0,$t0,1
+addi $10,$0,-6986
+sll $t2,$t0,2
+sw $10,arry($t2)
+addi $t0,$t0,1
+addi $11,$0,-2042
+sll $t2,$t0,2
+sw $11,arry($t2)
+addi $t0,$t0,1
+addi $12,$0,6251
+sll $t2,$t0,2
+sw $12,arry($t2)
+addi $t0,$t0,1
+addi $13,$0,687
+sll $t2,$t0,2
+sw $13,arry($t2)
+addi $t0,$t0,1
+addi $14,$0,4663
+sll $t2,$t0,2
+sw $14,arry($t2)
+addi $t0,$t0,1
+addi $15,$0,9879
+sll $t2,$t0,2
+sw $15,arry($t2)
+addi $t0,$t0,1
+addi $16,$0,22207
+sll $t2,$t0,2
+sw $16,arry($t2)
+addi $t0,$t0,1
+addi $17,$0,7133
+sll $t2,$t0,2
+sw $17,arry($t2)
+addi $t0,$t0,1
+addi $18,$0,13170
+sll $t2,$t0,2
+sw $18,arry($t2)
+addi $t0,$t0,1
+addi $19,$0,16602
+sll $t2,$t0,2
+sw $19,arry($t2)
+addi $t0,$t0,1
+addi $20,$0,16729
+sll $t2,$t0,2
+sw $20,arry($t2)
+addi $t0,$t0,1
+addi $21,$0,5664
+sll $t2,$t0,2
+sw $21,arry($t2)
+addi $t0,$t0,1
+addi $22,$0,-7248
+sll $t2,$t0,2
+sw $22,arry($t2)
+addi $t0,$t0,1
+addi $23,$0,-5308
+sll $t2,$t0,2
+sw $23,arry($t2)
+addi $t0,$t0,1
+addi $24,$0,18414
+sll $t2,$t0,2
+sw $24,arry($t2)
+addi $t0,$t0,1
+addi $25,$0,19246
+sll $t2,$t0,2
+sw $25,arry($t2)
+addi $t0,$t0,1
+addi $26,$0,23398
+sll $t2,$t0,2
+sw $26,arry($t2)
+addi $t0,$t0,1
+addi $27,$0,-5175
+sll $t2,$t0,2
+sw $27,arry($t2)
+addi $t0,$t0,1
+addi $28,$0,2733
+sll $t2,$t0,2
+sw $28,arry($t2)
+addi $t0,$t0,1
+addi $29,$0,17477
+sll $t2,$t0,2
+sw $29,arry($t2)
+addi $t0,$t0,1
+addi $30,$0,356
+sll $t2,$t0,2
+sw $30,arry($t2)
+addi $t0,$t0,1
+addi $31,$0,17988
+sll $t2,$t0,2
+sw $31,arry($t2)
+addi $t0,$t0,1
+jal next
+
+#÷∏¡Ó≤‚ ‘
+addi $s3,$0,0
+end:
+addi $t1,$0,1
+add $s3,$s3,$t1
+sll $t2,$t0,2
+lui $1,0x00008f6f
+ori $t3,$1,0x0000f3f9
+sw $t3,arry($t2)
+addi $t2,$t2,1
+sb $s3,arry($t2)
+addi $t2,$t2,1
+addi $t0,$t0,1
+lb $t3,arry($t2)
+sll $t2,$t0,2
+sw $t3,arry($t2)
+addi $t0,$t0,1
+beq $t1,$s3,end
+j exit
+
+next:
+addi $s0,$0,990
+addi $s1,$0,1
+addi $t1,$0,0
+addi $s2,$0,2
+loop_1_begin:
+    slt $t4,$t0,$s0
+    beq $t4,$0,loop_1_end
+    sll $t2,$t0,2
+    lui $1,0x0000ffff
+    ori $t3,$1,0x0000ffff
+    sw $t3,arry($t2)
+    add $t0,$t0,$s1
+    sllv $t2,$t0,$s2
+    sub $t3,$t2,$s1
+    sw $t3,arry($t2)
+    addi $t0,$t0,1
+    j loop_1_begin
+loop_1_end:
+jr $ra
+exit:
